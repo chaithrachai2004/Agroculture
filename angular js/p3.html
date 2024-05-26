@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentapp">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>student details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="studentctrl">
+        <ul>
+            <li ng-model="student in student">{{ student.name/uppercase }} {{ student.grade/uppercase }}</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dateapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Date App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="datectrl">
+        <h2>current date and time </h2>
+
+        <p>default format: {{ currentdate }}</p>
+        <p> custom format: {{ currentdate | date : 'fulldate' }}</p>
+        <p> time: {{ currentdate|date: 'shorttime' }}</p>
+        <p> day : {{ currentdate|date: 'EEEE' }}</p>
+
+    </div>
+    <script>
+        var app=angular.module('dateapp',[]);
+        app.controller('datectrl',function($scope,$interval){
+
+        
+        $interval(function(){
+            $scope.currentdate=new date();
+
+        },1000);
+        
+    });
+
+    </script>
+</body>
+</html>
